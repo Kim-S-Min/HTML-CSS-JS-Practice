@@ -16,7 +16,7 @@ function func() {
 
 /* ES6 전개 연산자 도입 */
 // 함수 인자 배열을 args 변수에 할당했다.
-//  ...~~ 로 각 위치에 있는 요소를 추출할 수 있다
+//  ...~~ 로 각 위치에 있는 요소를 추출할 수 있다3
 var array1 = ['one', 'two'];
 var array2 = ['three', 'four'];
 const combined = [...array1, ...array2];
