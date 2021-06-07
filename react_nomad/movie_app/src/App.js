@@ -6,12 +6,11 @@ class App extends React.Component {
     isLoading: true,
     movies: []
   };
-
+  getMovies = async() => {
+    const movies = await axios.get("https://yts.mx/api/v2/list_movies.json";)
+  }
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: false, book: true });
-    }, 6000);
-    axios
+    this.getMovies();
   }
 
   render() {
