@@ -247,7 +247,7 @@ window.addEventListener("online", handleOnline);
     init();
     */
 
-    /*
+    
     const title = document.querySelector("#title");
 
     const CLICKED_CLASS = "clicked";
@@ -260,5 +260,5 @@ window.addEventListener("online", handleOnline);
         title.addEventListener("click", handleClick);
     }
     init();
-    */
+    
 
