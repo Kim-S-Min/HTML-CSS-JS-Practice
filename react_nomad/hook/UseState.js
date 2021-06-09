@@ -1,33 +1,48 @@
-const content = [
-    {
-      tab: "Section 1",
-      content: "I'm the content of the Section 1"
-    },
-    {
-      tab: "Section 2",
-      content: "I'm the content of the Section 2"
-    }
-  ];
-  
-  const useTabs = (initialTab, allTabs) => {
-    if (!allTabs || !Array.isArray(allTabs)) {
-      return;
-    }
-    const [currentIndex, setCurrentIndex] = useState(initialTab);
-    return {
-      currentItem: allTabs[currentIndex],
-      changeItem: setCurrentIndex
-    };
-  };
-  
-  const App = () => {
-    const { currentItem, changeItem } = useTabs(0, content);
+
+//  Hook type
+const App = () => {
+    const [item, setItem] = useState(1);
+    const incrementItem = () => setItem(item + 1);
+    const decrementItem = () => setItem(item - 1);
     return (
       <div className="App">
-        {content.map((section, index) => (
-          <button onClick={() => changeItem(index)}>{section.tab}</button>
-        ))}
-        <div>{currentItem.content}</div>
+        <h1>Hello {item}</h1>
+        <h2>Start editing to see some magic happen!</h2>
+        <button onClick={incrementItem}>Increment</button>
+        <button onClick={decrementItem}>decrement</button>
       </div>
     );
-  };
+}
+  
+
+//  Class type
+class AppUgly extends React.Component {
+    state = {
+      item: 1
+    };
+    render() {
+      const { item } = this.state;
+      return (
+        <div className="App">
+          <h1>Hello {item}</h1>
+          <h2>Start editing to see some magic happen!</h2>
+          <button onClick={this.incrementItem}>Increment</button>
+          <button onClick={this.decrementItem}>decrement</button>
+        </div>
+      );
+    }
+    incrementItem = () => {
+      this.setState((state) => {
+        return {
+          item: state.item + 1
+        };
+      });
+    };
+    decrementItem = () => {
+      this.setState((state) => {
+        return {
+          item: state.item - 1
+        };
+      });
+    };
+  }
