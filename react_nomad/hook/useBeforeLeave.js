@@ -17,7 +17,7 @@ const useBeforeLeave = (onBefore) => {
     }, []);
   };
   
-  const App = () => {
+  const App = () => { 
     const begForLife = () => console.log("plz dont leave");
     useBeforeLeave(begForLife);
     return (
