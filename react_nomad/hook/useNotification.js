@@ -1,3 +1,5 @@
+/* 유저가 버튼을 누르면 알람을 제공해주는 기능이다 */
+
 const useNotification = (title, options) => {
     if (!("Notification" in window)) {
       return;
