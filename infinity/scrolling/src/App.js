@@ -29,14 +29,19 @@ export default function App() {
     setPageNumber(1)
   }
 
+  function handleList(e) {
+    setQuery(e.target.value)
+    setPageNumber(1)
+  }
+
   return (
     <>
       <input type="text" value={query} onChange={handleSearch}></input>
-      {books.map((book, index) => {
+      {books.map((title, index) => {
         if (books.length === index + 1) {
-          return <div ref={lastBookElementRef} key={book}>{book}</div>
+          return <div ref={lastBookElementRef} key={title}>{title}</div>
         } else {
-          return <div key={book}>{book}</div>
+          return <div key={title}>{title}</div>
         }
       })}
       <div>{loading && 'Loading...'}</div>
