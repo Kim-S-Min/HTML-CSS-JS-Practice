@@ -29,10 +29,7 @@ export default function App() {
     setPageNumber(1)
   }
 
-  function handleList(e) {
-    setQuery(e.target.value)
-    setPageNumber(1)
-  }
+
 
   return (
     <>

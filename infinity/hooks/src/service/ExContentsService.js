@@ -6,11 +6,10 @@ export default function ExContentsService(query, pageNumber) {
     const [error, setError] = useState(false);
     const [list, setList] = useState([]);
     const [hasMore, setHasMore] = useState(false);
-
+    
     useEffect(() => {
         setList([])
     }, [query])
-
     
     useEffect(() => {
         setLoading(true)
@@ -25,7 +24,7 @@ export default function ExContentsService(query, pageNumber) {
             setList(prevList => {
                 return [...new Set([...prevList, ...res.data.map(l => l.title)])]
             }) 
-            setHasMore(res.data.docs.length > 0)
+            setHasMore(res.data.length > 0)
             setLoading(false)
         }).catch(e => {
             if (axios.isCancel(e)) return
