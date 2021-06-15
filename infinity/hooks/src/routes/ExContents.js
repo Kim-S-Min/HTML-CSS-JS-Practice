@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback } from 'react'
 import ExContentsService from '../service/ExContentsService'
 
 export default function ExContents() {
-  const [query, setQuery] = useState('')
+  const [query] = useState('')
   const [pageNumber, setPageNumber] = useState(1)
 
   const {
@@ -24,23 +24,18 @@ export default function ExContents() {
     if (node) observer.current.observe(node) 
   }, [loading, hasMore])
 
-  function handleList() {
-    setQuery();
-    setPageNumber(1);
-  }
 
   return (
     <>
-        {list.map((title, index) => {
-          if (list.length === index + 1) {
-          return <div ref={lastPageElementRef} key={title}>{title}</div>
-          } else {
-          return <div key={title}>{title}</div>
-          }
-        })}
-        <div>{loading && 'Loading...'}</div>
-        <div>{error && 'Error...'}</div>
-         
+      {list.map((title, index) => {
+        if (list.length === index + 1) {
+        return <div ref={lastPageElementRef} key={title}>{title}</div>
+        } else {
+        return <div key={title}>{title}</div>
+        }
+      })}
+      <div>{loading && 'Loading...'}</div>
+      <div>{error && 'Error...'}</div>
     </> 
   )
 }
