@@ -1,13 +1,15 @@
 import React from 'react'
-import { BrowserRouter, Route} from 'react-router-dom'; 
+import { HashRouter, Route} from 'react-router-dom'; 
 import ExContents from './routes/ExContents'
+import Header from './component/section/Header'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
+      <Header/>
       <Route path="/" exact={true} component={ExContents} />
-    </BrowserRouter>
-  )
+    </HashRouter>
+  );
 }
 
 export default App;

@@ -22,7 +22,7 @@ export default function ExContentsService(query, pageNumber) {
             cancelToken: new axios.CancelToken(c => cancel = c)
         }).then(res => {
             setList(prevList => {
-                return [...new Set([...prevList, ...res.data.map(l => l.title)])]
+                return [...new Set([...prevList, ...res.data.map(l => "https://images.justwatch.com" + l.poster)])]   //  title -> poster
             }) 
             setHasMore(res.data.length > 0)
             setLoading(false)

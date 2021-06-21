@@ -26,16 +26,18 @@ export default function ExContents() {
 
 
   return (
-    <>
+    <div>
       {list.map((title, index) => {
         if (list.length === index + 1) {
         return <div ref={lastPageElementRef} key={title}>{title}</div>
         } else {
-        return <div key={title}>{title}</div>
+        return <div key={title}>
+          <img src={title} alt="title"/>
+        </div>
         }
       })}
       <div>{loading && 'Loading...'}</div>
       <div>{error && 'Error...'}</div>
-    </> 
+    </div> 
   )
 }
