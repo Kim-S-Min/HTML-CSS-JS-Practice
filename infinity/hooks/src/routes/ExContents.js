@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react'
 import ExContentsService from '../service/ExContentsService'
+import "./ExContents.css"
 
 export default function ExContents() {
   const [query] = useState('')
@@ -26,18 +27,37 @@ export default function ExContents() {
 
 
   return (
-    <div>
-      {list.map((title, index) => {
-        if (list.length === index + 1) {
-        return <div ref={lastPageElementRef} key={title}>{title}</div>
-        } else {
-        return <div key={title}>
-          <img src={title} alt="title"/>
-        </div>
-        }
-      })}
-      <div>{loading && 'Loading...'}</div>
-      <div>{error && 'Error...'}</div>
+    <div className="contents">
+      <ul className="contents__ul">
+        {list.map((title, index) => {
+          if (list.length === index + 1) {
+          return <div ref={lastPageElementRef} key={title}>{title}</div>
+          } else {
+          return (
+            <li className="contents__li">
+                <div className="contents__div">
+                  <div>
+                    <img src={title} alt="title"/>
+                  </div>                
+                  <div className="contents__box">
+                    <button className="contents__btn">
+                      좋아요
+                    </button>
+                    <button className="contents__btn">
+                      싫어요
+                    </button>
+                  </div>
+                </div>
+            </li>
+          )}
+        })}
+
+        <div>{loading && 'Loading...'}</div>
+        <div>{error && 'End...'}</div>  {/* 페이징이 모두 끝나게 되면 Loading과 End가 동시에 출력된다 */}
+      </ul>
+      <footer className="footer">
+        2021 Bit-academy-teamProject-1조
+      </footer>
     </div> 
   )
 }
