@@ -1,24 +1,28 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import {Navbar, Nav, NavDropdown} from "react-bootstrap"
 
 import "../css/Header.css"
+
 
 export default function Header() {
 
   return (
-    <nav className="navbar">
-      <div className="navbar__logo">
-        <Link to="/">SHADE</Link>
-      </div>
-      <ul className="navber__menu">
-        <li>
-          <input className="navbar__search"></input>
-        </li>
-        <li>
-          <Link className="navber__login" to="/login">Login</Link>
-        </li>
-      </ul>
-    </nav>
+    <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className="wrapper">
+    <Navbar.Brand href="/">SHADE</Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/list">추천목록</Nav.Link>
+          Signed in as:<Nav.Link href="/">추천</Nav.Link>
+          <Nav.Link href="/login">로그인</Nav.Link>
+          Signed in as: <NavDropdown title="{username}" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">마이페이지</NavDropdown.Item>
+            {/* <NavDropdown.Divider /> */}
+            <NavDropdown.Item href="#action/3.4">로그아웃</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   )
 }
 

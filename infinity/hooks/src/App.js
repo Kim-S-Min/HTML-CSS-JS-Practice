@@ -1,13 +1,12 @@
 import React from "react"
 import { BrowserRouter, Route, Switch} from "react-router-dom"
-
 import ExContents from "./routes/ExContents"
 import Header from "./component/Header"
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="wrapper">
         <Header/>
         <div>
           <Switch>

@@ -3,7 +3,9 @@
 }
 
 .contents__ul {
-  margin-top: 300px;
+  margin-top: 150px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .contents__li {
