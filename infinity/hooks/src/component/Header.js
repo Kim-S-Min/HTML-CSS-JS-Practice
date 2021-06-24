@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "./Header.css"
+
+import "../css/Header.css"
 
 export default function Header() {
 
@@ -13,7 +14,9 @@ export default function Header() {
         <li>
           <input className="navbar__search"></input>
         </li>
-        <li><Link className="navber__login" to="/login">Login</Link></li>
+        <li>
+          <Link className="navber__login" to="/login">Login</Link>
+        </li>
       </ul>
     </nav>
   )

@@ -1,13 +1,20 @@
-import React from 'react'
-import { BrowserRouter, Route} from 'react-router-dom'; 
-import ExContents from './routes/ExContents'
-import Header from './component/Header'
+import React from "react"
+import { BrowserRouter, Route, Switch} from "react-router-dom"
+
+import ExContents from "./routes/ExContents"
+import Header from "./component/Header"
 
 function App() {
   return (
     <BrowserRouter>
-      <Header/>
-      <Route path="/" exact={true} component={ExContents} />
+      <div>
+        <Header/>
+        <div>
+          <Switch>
+            <Route path="/" exact={true} component={ExContents} /> 
+          </Switch>
+        </div>
+      </div>
     </BrowserRouter>
   );
 }

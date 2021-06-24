@@ -1,0 +1,53 @@
+.contnets {
+  text-align: center;
+}
+
+.contents__ul {
+  margin-top: 300px;
+}
+
+.contents__li {
+  display: inline-block;
+  margin: 3px;
+}
+
+​.contents__div {
+  width: 175px;
+}
+
+/* contents__box padding값은 버튼 디자인 변경 이후에 맞춰서 진행 */
+.contents__box {
+  background-color: rgb(48, 42, 42);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: start;
+  position: relative;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+  bottom: 5px;
+}
+
+.contents__btn {
+  font-size: 5px;
+}
+
+img {
+  width: 175px;
+  height: 250px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* background-color는 프로젝트 진행하는 동안은 개인의 취향에 맞춰서 진행 */
+/* body {
+  background-color: rgb(198, 201, 192);
+} */
+
+/* Footer */
+.footer {
+  height: 30px;
+  position: static;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}

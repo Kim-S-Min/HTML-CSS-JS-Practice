@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react'
+
 import ExContentsService from '../service/ExContentsService'
-import "./ExContents.css"
+import "../css/ExContents.css"
 
 export default function ExContents() {
   const [query] = useState('')
@@ -55,9 +56,9 @@ export default function ExContents() {
         <div>{loading && 'Loading...'}</div>
         <div>{error && 'End...'}</div>  {/* 페이징이 모두 끝나게 되면 Loading과 End가 동시에 출력된다 */}
       </ul>
-      <footer className="footer">
+      <div className="footer">
         2021 Bit-academy-teamProject-1조
-      </footer>
+      </div>
     </div> 
   )
 }
